@@ -1,0 +1,44 @@
+@use '../abstracts/helpers' as *;
+
+
+.text-preset-1 {
+    @include text($color: $rose-900, $font-size: $fs-800, $font-weight: $fw-bold, $line-height: $lh-100);
+}   
+
+.text-preset-2 {
+    @include text($color: $rose-900, $font-size: $fs-500, $font-weight: $fw-bold, $line-height: $lh-200);
+}
+
+.text-preset-3 {
+    @include text($color: $rose-900, $font-size: $fs-200, $font-weight: $fw-semi-bold, $line-height: $lh-500);
+}
+
+.text-preset-4 {
+    @include text($color: $rose-900, $font-size: $fs-100, $font-weight: $fw-regular, $line-height: $lh-500);
+}
+
+.text-preset-5 {
+    @include text($color: $rose-900, $font-size: $fs-100, $font-weight: $fw-semi-bold, $line-height: $lh-500);
+}
+
+
+
+//cart typography
+
+.cart-count {
+    color: $red;
+}
+
+.item-price > .text-preset-4 {
+    color: $rose-500;
+}
+
+.item-price > .text-preset-5:first-child {
+    color: $red;
+}
+
+.item-price > .text-preset-5:last-child {
+    color: $rose-500;
+}
+
+;

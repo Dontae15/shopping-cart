@@ -1,0 +1,172 @@
+@use '../abstracts/helpers' as *;
+
+
+.grid {
+    @include container($max-width: 800px, $margin: 0 auto);
+    @include grid($grid-template-columns: repeat(3, 1fr), $grid-gap: $sp-300);
+}
+
+.grid-item {
+    @include flex($flex-direction: column, $align-items: center, $justify-content: center, $gap: $sp-400);
+}
+
+.grid-item img {
+    border-radius: $sp-100; 
+}
+
+.product-img {
+    position: relative;
+}
+
+.add-to-cart-btn {
+    @include button($background-color: $white, $padding: $sp-150 $sp-300, $border-radius: 999px);
+    @include flex($flex-direction: row, $align-items: center, $justify-content: center, $gap: $sp-100);
+    border: 1px solid $rose-400;
+    margin: 0 auto;
+    position: absolute;
+    top: 90%;
+    left: 19%;
+    transform: translate(-1%, -5%);
+}
+
+.add-to-cart-btn:hover {
+  cursor: pointer;
+}
+
+.item-img.active {
+    border: 2px solid $red;
+}
+  
+  
+.product-img {
+  max-width: 250px;
+}
+
+.product-info {
+    @include container ($max-width: 251px, $margin: 0 auto);
+    @include flex($flex-direction: column, $align-items: flex-start, $justify-content: flex-start, $gap: $sp-100);
+}
+
+.item-category {
+    color: $rose-500;
+    margin-bottom: -0.3rem;
+}
+
+.item-price {
+    color: $red;
+}
+
+.cart-product-btn {
+    background-color: $red;
+    @include container($max-width: 160px, $margin: 0 auto, $border-radius: 999px);
+    @include flex($flex-direction: row, $align-items: center, $justify-content: space-between);
+    padding-inline-start: 15px;
+    position: absolute;
+    top: 90%;
+    left: 19%;
+}
+
+
+.quantity-controls {
+    @include container($max-width: 70px);
+    @include flex($flex-direction: row, $align-items: space-between, $justify-content: center);
+}
+
+.quantity-controls button {
+    background: none;
+    border: 1px solid $white;
+    padding: $sp-50;
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    border-radius: 999px;
+    cursor: pointer;
+}
+
+.quantity-display {
+    color: $white;
+}
+
+.submit-to-cart-btn {
+    @include container($max-width: 55px, $border-radius: 999px);
+    @include flex($align-items: center, $justify-content: center);
+    border: 1px solid $red;
+    height: 42px;
+    cursor: pointer;
+}
+
+@media (max-width: 1190px) {
+
+    .grid-container {
+        @include container($max-width:800px, $margin: 0 auto);
+    }
+
+}
+
+@media (max-width: 850px) {
+    .add-to-cart-btn {
+        transform: translate(-5%, -5%);
+    }
+}
+
+@media (max-width: 780px) {
+    .grid-container {
+        @include container($max-width: 500px, $margin: 0 auto);
+    }
+
+    .grid {
+        @include container($max-width: 500px, $margin: 0 auto);
+        @include grid($grid-template-columns: 1fr 1fr, $grid-gap: $sp-300);
+    }
+
+    .product-img {
+        @include container($max-width: 400px, $margin: 0 auto);
+    }
+
+}
+
+
+@media (max-width: 560px) {
+    
+    .grid-container {
+        @include container($max-width: 350px, $margin: 0 auto, $padding: $sp-50);
+    }
+
+    .grid {
+        @include grid($grid-template-columns: 1fr, $grid-gap: $sp-300);
+     }
+
+    .grid-item {
+        @include container ($max-width: 350px, $margin: 0 auto);
+        @include flex($flex-direction: column, $align-items: flex-start, $justify-content: flex-start);
+    }
+    .product-img {
+        border: 1px solid black;
+        @include container($max-width: 100%, $margin: 0 auto);
+    }
+    .item-img {
+        width: 100%;
+        max-height: 350px;
+    }
+    .add-to-cart-btn {
+        top: 92%;
+        left: 30%;
+        transform: translate(-10%, 0%);
+    }
+    .product-info {
+        @include container ($max-width: 400px, $margin: 0 auto);
+        margin-top: 1rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .add-to-cart-btn {
+        top: 92%;
+        left: 30%;
+        transform: translate(-20%, 0%);
+    }
+
+    .product-info {
+        margin-top: 2rem;
+    }
+}

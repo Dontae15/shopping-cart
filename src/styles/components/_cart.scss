@@ -1,0 +1,209 @@
+@use '../abstracts/helpers' as *;
+
+
+
+body {
+    position: relative;
+}
+
+
+/* Cart Item */
+.cart-item {
+    @include container($max-width: 336px, $margin: 0 auto);
+    @include flex($flex-direction: row, $align-items: center, $justify-content: space-between);
+    border-bottom: 1px solid $rose-100;
+}
+
+/* Item Info (Name and Quantity) */
+.item-info {
+    @include container($max-width: 175px);
+    @include flex($flex-direction: column, $align-items: flex-start, $justify-content: flex-start);
+    padding-block-end: 1rem;
+}
+
+
+/* Quantity and Price Section */
+.item-price {
+    @include container($max-width: 165px);
+    @include flex($flex-direction: row, $align-items: center, $justify-content: space-between);
+    margin-top: -0.5rem;
+}
+
+
+/* Remove Button */
+.remove-cart-item-btn {
+    background-color: transparent;
+    border: 1px solid $rose-500;
+    border-radius: 999px;
+    padding: 4px;
+    cursor: pointer;
+    margin-top: -1rem;
+}
+
+.remove-cart-item-btn img {
+    width: 12px;
+    height: 12px;
+}
+
+/* Submit Order Section */
+.submit-order {
+    @include container($max-width: 336px, $margin: 0 auto);
+    @include flex($flex-direction: column, $align-items: flex-start, $justify-content: flex-start, $gap: $sp-300);
+}
+
+.order-total {
+    @include container($max-width: 336px, $margin: 0 auto);
+    @include flex($flex-direction: row, $align-items: center, $justify-content: space-between);
+}
+
+
+/* Confirm Order Button */
+.confirm-order-btn {
+    @include container($max-width: 288px, $margin: 0 auto);
+    @include button($background-color: $red, $padding: $sp-200 $sp-300, $border-radius: 999px);
+    color: $white;
+    border: none;
+}
+
+/* Order Message (Carbon Neutral Info) */
+.orderMessage {
+    background-color: $rose-50;
+    @include container($max-width: 336px, $margin: 0 auto, $padding: $sp-200);
+    @include flex($flex-direction: row, $align-items: center, $justify-content: center, $gap: $sp-100);
+}
+
+.orderMessage img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+
+.empty-cart-display {
+    @include container($max-width: 336px, $margin: 0 auto);
+    @include flex($flex-direction: column, $align-items: center, $justify-content: center, $gap: $sp-300);
+}
+
+.empty-cart-display-img {
+    margin: 0 auto;
+}
+
+.empty-cart-display p {
+    margin-top: 1rem;
+    text-align: center;
+    color: $rose-500;
+}
+
+.modal {
+    background-color: $white;
+    @include container($max-width: 512px, $padding: $sp-500, $margin: 0 auto, $border-radius: $sp-150);
+    @include flex($flex-direction: column, $align-items: flex-start, $justify-content: flex-start, $gap: $sp-400);
+    position: absolute;
+    top: 30%;
+    left: 30%;
+}
+
+.modal-heading {
+    @include container($max-width: 512px, $margin: 0 auto);
+    @include flex($flex-direction: column, $align-items: flex-start, $justify-content: flex-start);
+}
+
+.modal-heading img {
+    width: 48px;
+    height: 48px;
+    margin-bottom: $sp-200;
+}
+
+.modal-heading p {
+    color: $rose-500;
+    margin-top: -1rem;
+}
+
+.order-summary {
+    background-color: $rose-50;
+    @include container($max-width: 464px, $margin: 0 auto, $padding: $sp-300, $border-radius: $sp-100);
+    @include flex($flex-direction: column, $align-items: flex-start, $justify-content: flex-start);
+}
+
+.order-item {
+    @include container($max-width: 464px, $margin: 0 auto);
+    @include flex($flex-direction: row, $align-items: center, $justify-content: flex-start);
+    border-bottom: 1px solid $rose-100;
+}
+
+.order-summary img {
+    width: 50px;
+    height: 50px;
+    border-radius: $sp-50;
+}
+
+.product-summary-info {
+    @include container($max-width: 285px);
+}
+
+.product-price {
+    @include flex ($flex-direction: row, $align-items: center, $justify-content: flex-start);
+}
+
+.product-order-total {
+    @include container($max-width: 464px, $margin: 0 auto);
+    @include flex($flex-direction: row, $align-items: center, $justify-content: space-between);
+}
+
+.start-new-order-btn {
+    @include button($background-color: $red);
+    @include container($max-width: 464px, $margin: 0 auto);
+    color: $white;
+    padding: $sp-200 $sp-300;
+    border-radius: 999px;
+    border: none;
+    
+}
+
+.main-content.active {
+    opacity: 0.5;
+}
+
+.product-quantity {
+    color: $red;
+}
+
+
+
+@media (max-width: 1190px) {
+    #product-cart {
+        @include container($max-width: 800px, $padding: $sp-300, $border-radius: $sp-150, $margin: 0 auto);
+        @include flex($flex-direction: column, $align-items: flex-start, $justify-content: flex-start, $gap: $sp-300);
+        grid-column: 1 / -1;
+    }
+
+    #product-cart {
+        min-height: 500px;
+    }
+
+    .modal {
+        @include container($max-width: 608px, $padding: $sp-400, $margin: 0 auto, $border-radius: $sp-150);
+       position: absolute;
+       left: 25%;
+       transform: translate(-24%, 0);
+    }
+
+    .submit-order, .order-total, .cart-item {
+        @include container($max-width: 800px, $margin: 0 auto);
+    }
+    .orderMessage {
+        @include container($max-width: 800px, $margin: 0 auto, $padding: $sp-200);
+    }
+
+    .confirm-order-btn {
+        @include container($max-width: 800px, $margin: 0 auto, $border-radius: 999px, $padding: $sp-200 $sp-300);
+    }
+}
+
+@media (max-width: 725px) {
+    #product-cart {
+        min-height: 500px;
+    }
+
+   
+}

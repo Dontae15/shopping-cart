@@ -1,0 +1,13 @@
+// main.scss
+
+// abstracts
+@use 'abstracts/helpers' as *;  // Assuming you want to use the functions/mixins from helpers
+
+// base
+@use 'base/reset';
+@use 'base/typography';
+@use 'base/layout';
+
+// components
+@use 'components/grid';
+@use 'components/cart';
